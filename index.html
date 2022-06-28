@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- AngularJS -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+   <!-- Firebase -->
+   <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+   <!-- AngularFire -->
+   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+   <link rel="shortcut icon" href="images/favicon.png">
+   <title>chào mừng đến batonmoto</title>
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link
+      href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
+      rel='stylesheet' type='text/css'>
+   <link href="css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+   <link href="css/sequence-looptheme.css" rel="stylesheet" media="all" />
+   <link href="css/style.css" rel="stylesheet">
+
+   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+</head>
+
+<body id="home" ng-app="app" ng-controller="myCtrl">
+   <div class="wrapper">
+      <div class="header">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-2 col-sm-2">
+                  <div class="logo"><a href="index.html"><img src="images/logotaibaton.png" alt="FlatShop"></a></div>
+               </div>
+               <div class="col-md-10 col-sm-10">
+                  <div class="header_top">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="topmenu">
+
+                              <li><a href="#">Giới Thiệu</a></li>
+                              <li><a href="#">góp ý</a></li>
+                              <li><a href="#">hỏi đáp</a></li>
+                           </ul>
+                        </div>
+                        <div class="col-md-3">
+                           <ul class="usermenu">
+                              <li class="active dropdown">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tài Khoản</a>
+                                 <div class="dropdown-menu">
+                                    <ul class="mega-menu-links">
+                                       <li><a href="#!dangnhap">đăng nhập</a></li>
+                                       <li><a href="home2.html">quên mật khẩu</a></li>
+                                       <li><a href="home3.html">Đăng xuất</a></li>
+                                       <li><a href="#!danhsachngang">Đổi Mật Khẩu</a></li>
+                                       <li><a href="#!danhsachdoc">Cập nhật Tài Khoản</a></li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li><a href="#!dangki" class="reg">Đăng Kí</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="header_bottom">
+                     <ul class="option">
+                        <li id="search" class="search">
+                           <form><input class="search-submit" type="submit" value=""><input class="search-input"
+                                 placeholder="Enter your search term..." type="text" value="" name="search"></form>
+                        </li>
+                        </li>
+                        <li class="option-cart" ng-show="totall != 0">
+                           <a href="#" class="cart-icon">cart <span class="cart_no">{{total}}</span></a>
+                           <ul class="option-cart-item">
+                              <li>
+                                 <div class="cart-item" ng-repeat="item in cart track by $index">
+                                    <div class="image"><img src="images/products/small/{{item.sanpham.hinh}}" alt=""></div>
+                                    <div class="cart-total">
+                                       <button ng-click="decrease(item)"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+                                       <input min="1" value="{{item.slBan}}" readonly>
+                                       <button ng-click="increase(item)"><i class="fa fa-plus-circle" aria-hidden="true" ></i></button>
+                                   </div>
+                                    <div class="right">
+                                       <p class="price">{{item.sanpham.gia}}</p>
+                                       <a href="#" class="remove" ng-click="removeCart(item)"><img src="images/remove.png" alt="remove"></a>
+                                    </div>
+                                 </div>
+                              </li>
+                              onClick="location.href='#!giohang'">CheckOut</button></li>
+                              <li><span class="total">Total <strong> <p ng-bind="subtotal()|currency"></p></strong></span><button class="checkout"
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse"
+                           data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span
+                              class="icon-bar"></span><span class="icon-bar"></span><span
+                              class="icon-bar"></span></button></div>
+                     <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                           <li><a href="#!home">trang chủ</a></li>
+                           <li><a href="#!danhsachngang">yamaha</a></li>
+                           <li><a href="#!danhsachdoc">honda</a></li>
+                           <li><a href="#!contact">liên hệ</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="clearfix"></div>
+      <article>
+         <div class="pull-right label label-info" ng-show="loading">Loading....</div>
+         <ng-view></ng-view>
+      </article>
+
+   </div>
+   <div class="clearfix"></div>
+   <div class="footer">
+      <div class="footer-info">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="footer-logo"><a href="#"><img src="images/logotaibaton.png" alt=""></a></div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <h4 class="title">địa chỉ <strong>liên hệ</strong></h4>
+                  <p>fpt polytechnic cơ sở 3</p>
+                  <p>SĐT: 0906964598</p>
+                  <p>Email : buitantai2704@gmail.com</p>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <h4 class="title"><strong> Hỗ Trợ</strong> Khách Hàng</h4>
+                  <ul class="support">
+                     <li><a href="#">Hỏi đáp</a></li>
+                     <li><a href="#">Phương thức trả tiền</a></li>
+                     <li><a href="#">Thông tin</a></li>
+
+                  </ul>
+               </div>
+               <div class="col-md-3">
+                  <h4 class="title">liên hệ <strong>tư vấn </strong></h4>
+                  <p>bạn cần tư vấn</p>
+                  <form class="newsletter">
+                     <input type="text" name="" placeholder="xin hãy để lại email....">
+                     <input type="submit" value="đăng kí" class="button">
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="copyright-info">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <p>Copyright © 2012. Designed by <a href="#">Michael Lee</a>. All rights reseved</p>
+               </div>
+               <div class="col-md-6">
+                  <ul class="social-icon">
+                     <li><a href="#" class="linkedin"></a></li>
+                     <li><a href="#" class="google-plus"></a></li>
+                     <li><a href="#" class="twitter"></a></li>
+                     <li><a href="#" class="facebook"></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   </div>
+
+   <!-- Bootstrap core JavaScript==================================================-->
+   <script src="./js/conect-firebase.js"></script>
+   <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+   <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/jquery.sequence-min.js"></script>
+   <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+   <script defer src="js/jquery.flexslider.js"></script>
+   <script type="text/javascript" src="js/script.min.js"></script>
+</body>
+
+</html>

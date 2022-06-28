@@ -1,0 +1,92 @@
+<div class="hom-slider">
+    <div class="container">
+       <div id="sequence">
+          <div class="sequence-prev"><i class="fa fa-angle-left"></i></div>
+          <div class="sequence-next"><i class="fa fa-angle-right"></i></div>
+          <ul class="sequence-canvas">
+             <li class="animate-in">
+                <div class="flat-caption caption1 formLeft delay300 text-center"><span class="suphead">Exciter</span></div>
+                <div class="flat-caption caption2 formLeft delay400 text-center">
+                   <h1>giấc mơ của trẻ trâu</h1>
+                </div>
+                <div class="flat-caption caption3 formLeft delay500 text-center">
+                   <p>dành cho quái xế hà nội</p>
+                </div>
+                <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">Chi
+                      tiết</a></div>
+                <div class="flat-image formBottom delay200" data-duration="5" data-bottom="true"><img
+                      src="images/products/small/exbatcho.png" alt=""></div>
+             </li>
+             <li>
+                <div class="flat-caption caption2 formLeft delay400">
+                   <h1>YAMAHA R1</h1>
+                </div>
+                <div class="flat-caption caption3 formLeft delay500">
+                   <h2>Mãnh thú đường đua<br>đem cúp về nhà cho mẹ</h2>
+                </div>
+                <div class="flat-button caption5 formLeft delay600"><a class="more" href="#">Chi tiết </a></div>
+                <div class="flat-image formBottom delay200" data-bottom="true"><img
+                      src="images/products/small/r1.png"
+                      alt=""></div>
+             </li>
+             <li>
+                <div class="flat-caption caption2 formLeft delay400 text-center">
+                   <h1>cb1000</h1>
+                </div>
+                <div class="flat-caption caption3 formLeft delay500 text-center">
+                   <p>mãnh thú đường phố. <br>cơn ác mộng của trẻ trâu nẹt bô</p>
+                </div>
+                <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">chi
+                      tiết</a></div>
+                <div class="flat-image formBottom delay200" data-bottom="true"><img
+                      src="images/products/small/cbr150.png"
+                      alt=""></div>
+             </li>
+          </ul>
+       </div>
+    </div>
+    <div class="promotion-banner">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="promo-box"><img src="images/logomoto2.png" alt=""></div>
+             </div>
+             <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="promo-box"><img src="images/logotayga.png" alt=""></div>
+             </div>
+             <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="promo-box"><img src="images/logomoto1.png" alt=""></div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="clearfix"></div>
+ <div class="container_fullwidth">
+    <div class="container">
+       <div class="hot-products">
+          <h3 class="title">Sản Phẩm <strong>Bán Chạy</strong> </h3>
+          <div class="control"><a id="prev_hot" class="prev" href="#" ng-click="prev()">&lt;</a><a id="next_hot" class="next"
+                href="#" ng-click="next()">&gt;</a></div>
+                <button class="page-link" ng-click="next()">Next</button></li>
+          <ul id="hot">
+             <li>
+                <div class="row">
+                   <div class="col-md-3 col-sm-6" ng-repeat="x in data |limitTo:4:begin">
+                      <div class="products">
+                         <div class="thumbnail"><a href="#!chitiet?id={{x.$id}}"><img src="images/products/small/{{x.hinh}}"
+                                  alt="Product Name"></a></div>
+                         <div class="productname">{{x.tensp}}</div>
+                         <h4 class="price">{{x.gia}}</h4>
+                         <div class="button_group"><button class="button add-cart" type="button"
+                               ng-click="addcart(x)">mua
+                               ngay</button><button class="button compare" type="button"><i
+                                  class="fa fa-exchange"></i></button><button class="button wishlist"
+                               type="button"><i class="fa fa-heart-o"></i></button></div>
+                      </div>
+                   </div>
+                </div>
+             </li>
+            
+          </ul>
+       </div>

@@ -1,0 +1,102 @@
+<body >
+  <div class="container_fullwidth" style="background-color: rgb(238, 77, 45);">
+    <div class="container" ng-app="myapp" ng-controller="myCtrl">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="/images/logotaibaton1.png" alt="">
+          <h1 style="color: whitesmoke; text-align: center;">luôn mang đến uy tín</h1>
+          <br>
+          <h3 style="color: whitesmoke; text-align: center;">trải nghiệm tốt nhất cho người dùng</h3>
+        </div>
+        <div class="col-md-7" >
+          <div class="checkout-page" style="background-color: white ;">
+            <ol class="checkout-steps">
+              <li class="steps active">
+                <a href="checkout.html" class="step-title">
+                  Đăng Kí
+                </a>
+                <div class="step-description">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="run-customer">
+                        <h5>
+                          khách hàng
+                        </h5>
+                        <form>
+
+                          <div class="form-row">
+                            <label class="lebel-abs">
+                              Tên Đăng Nhập :
+                              <strong class="red">
+                                *
+                              </strong>
+                            </label>
+                            <input type="text" class="input namefild" ng-model="txttendn">
+                          </div>
+                          <div class="form-row">
+                            <label class="lebel-abs">
+                              họ và tên
+                              <strong class="red">
+                                *
+                              </strong>
+                            </label>
+                            <input type="text" class="input namefild" ng-model="txtname">
+                          </div>
+                          <div class="form-row">
+                            <label class="lebel-abs">
+                              Mật Khẩu
+                              <strong class="red">
+                                *
+                              </strong>
+                            </label>
+                            <input type="password" class="input namefild" ng-model="txtpass">
+                            <div class="form-row">
+                              <label class="lebel-abs">
+                                email
+                                <strong class="red">
+                                  *
+                                </strong>
+                              </label>
+                              <input type="text" class="input namefild" ng-model="txtEmail">
+                            </div>
+                            <div class="form-row">
+                              <label class="lebel-abs">
+                                địa chỉ
+                                <strong class="red">
+                                  *
+                                </strong>
+                              </label>
+                              <input type="text" class="input namefild" ng-model="txtdc">
+                            </div>
+                            <div class="form-row">
+                            <label for=""> giới tính</label>
+                            <input type="radio" id="html" name="fav_language" ng-model="gender" value="NAM">
+                            nam
+                            <input type="radio" id="html" name="fav_language" ng-model="gender" value="NU">
+                            nữ
+                          </div>
+
+                          </div>
+                          <button ng-click="addAccount();">
+                            Đăng Kí
+                          </button>
+                          <div>
+                            <hr>
+                            bạn đã có tài khoản? <a href="checkout.html" style="color: rgb(238, 77, 45) ;">Đăng Nhập</a>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix">
+      </div>
+
+    </div>
+  </div>
+</body>

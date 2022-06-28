@@ -1,0 +1,74 @@
+<body ng-app="app" ng-controller="myctrl">
+  </div>
+  <div class="container_fullwidth" style="background-color: rgb(238, 77, 45);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="/images/logotaibaton1.png" alt="">
+          <h1 style="color: whitesmoke; text-align: center;">luôn mang đến uy tín</h1>
+          <br>
+          <h3 style="color: whitesmoke; text-align: center;">trải nghiệm tốt nhất cho người dùng</h3>
+        </div>
+        <div class="col-md-7">
+          <div class="checkout-page" style="background-color: white ;">
+            <ol class="checkout-steps">
+              <li class="steps active">
+                <a href="checkout.html" class="step-title">
+                  Đăng Nhập
+                </a>
+                <div class="step-description">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="run-customer">
+                        <h5>
+                          khách hàng
+                        </h5>
+                        <form>
+                          <div class="form-row">
+                            <label class="lebel-abs">
+                              Tên Đăng Nhập :
+                              <strong class="red">
+                                *
+                              </strong>
+                            </label>
+                            <input type="text" class="input namefild" name="txtusername" id="username" ng-model="username">
+                          </div>
+                          <div class="form-row">
+                            <label class="lebel-abs" >
+                              Mật Khẩu
+                              <strong class="red">
+                                *
+                              </strong>
+                            </label>
+                            <input type="text" class="input namefild" name="txtpassword" id="pass" ng-model="password">
+                          </div>
+                          <p class="forgoten">
+                            <a href="#">
+                              Quên Mật Khẩu
+                            </a>
+                          </p>
+                          <button ng-click="loginAccount();">
+                            Đăng Nhập
+                          </button>
+                          <div>
+                            <hr>
+                            bạn chưa có tài khoản? <a href="checkout2.html" style="color: rgb(238, 77, 45) ;">Đăng
+                              ký</a>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix">
+      </div>
+
+    </div>
+  </div>
+  </div>
+</body>
